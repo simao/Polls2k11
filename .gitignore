@@ -1,4 +1,6 @@
 .idea
 .DS_Store
 *.pyc
+all_polls.json
+latest.json
 
