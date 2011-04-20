@@ -1,7 +1,12 @@
 # -*- coding: utf-8 -*-
+from itertools import izip
 import urllib2
 import simplejson as json
 import codecs
+from beautifulsoup import BeautifulSoup
+import logging
+import logging.handlers
+
 
 __author__ = 'Simao Mata'
 
@@ -10,13 +15,31 @@ LATEST_POLL_FILE = "latest.json"
 
 POLLS_URL = "http://en.wikipedia.org/wiki/Portuguese_legislative_election,_2011"
 
-from beautifulsoup import BeautifulSoup
+LOG_FORMAT = '[%(levelname).1s] [%(asctime)s] [%(name)s] %(message)s'
+LOG_FILE = "polls.log"
 
-import logging
+logging.basicConfig(level=logging.DEBUG, format=LOG_FORMAT)
 
-logging.basicConfig(level=logging.DEBUG)
+txt_handler = logging.handlers.TimedRotatingFileHandler(LOG_FILE, when='D')
+log_formatter = logging.Formatter(LOG_FORMAT)
+txt_handler.setFormatter(log_formatter)
+logging.getLogger(__name__).addHandler(txt_handler)
 
 _log = logging.getLogger(__name__)
+
+_clean_table = {
+    "%" : "",
+    u"–" : "-"
+}
+
+def _clean_data(data):
+    """
+    Changes data replacing all chars present in the keys of clean_table by the corresponding value
+    and return the changed string.
+    """
+    for k, v in _clean_table.iteritems():
+        data = data.replace(k, v)
+    return data
 
 def get_polls_all(fd, limit=None):
     """
@@ -30,10 +53,17 @@ def get_polls_all(fd, limit=None):
     if len(tables) > 1: # TODO This can actually be handled checking for info inside each table
         raise Exception("Too many tables found")
 
-    tr_lines = tables[0].findAll("tr")[1:]
+    all_trs = tables[0].findAll("tr")
+    tr_lines = all_trs[1:]
+
+    # Find out parties names
+    # All names are on the first line of the table
+    # Search for font tags
+    font_tags = all_trs[0].findAllNext("font")
+    parties_names = [f.string for f in font_tags]
 
     all_polls = []
-
+    # TODO Further asserts/verifies are needed to make sure we can use this table
     for poll in tr_lines:
         if limit and len(all_polls) >= limit:
             _log.debug("Stopped parsing. Already parsed until limit = %s" % limit)
@@ -45,28 +75,24 @@ def get_polls_all(fd, limit=None):
             _log.info("Stopping parsing. Line does not have 9 columns. We need 8 columns to parse stats.")
             break
 
-        cells_t = [c.string.replace("%","") if c.string is not None else None for c in cells ]
+        cells_t = [_clean_data(c.string) if c.string is not None else None for c in cells ]
 
         a_tag = cells[1].find('a')
         href = dict(a_tag.attrs)["href"]
         institute = a_tag.string
 
-        all_polls.append({
-                "date" : cells_t[0],
+        current_poll_data = {
+                "date" : _clean_data(cells_t[0]), # We actually handle this OK, but clients will probably have problems
                 "source" : {
                     "href" : href,
                     "name" : institute,
                 },
-                "parties" : { # TODO Parties names can be infered from the header
-                    "Socialist" : cells_t[2],
-                    "Social Democratic" : cells_t[3],
-                    "People's Party" : cells_t[4],
-                    "Left Bloc" : cells_t[5],
-                    "Green-Communist" : cells_t[6],
-                    "Others / undecided" : cells_t[7],
-                    "Lead" : cells_t[8],
-                }
-            })
+                "parties" : {}
+            }
+
+        current_poll_data["parties"].update((partie, cells_t[n]) for partie, n in izip(parties_names, range(2,8)))
+
+        all_polls.append(current_poll_data)
 
         _log.info("Parsed polls for %s" % cells_t[0])
 
@@ -92,7 +118,8 @@ def get_polls_from_url(url, limit=None):
     response = urllib2.urlopen(req)
     return get_polls_all(response, limit=limit)
 
-if __name__ == "__main__":
+
+def main():
     _log.debug("Will parse last poll to %s" % ALL_POLLS_FILE)
     _log.debug("Will dump all polls to %s" % LATEST_POLL_FILE)
 
@@ -108,5 +135,9 @@ if __name__ == "__main__":
         _log.error("Could not parse polls. Not saving latest poll")
 
     _log.info("Finished.")
+
+
+if __name__ == "__main__":
+    main()
 
 
