@@ -29,18 +29,15 @@ endpoints defined there.
 
 ### Use http://polls.simaomata.com ###
 
-[all]: http://polls.simaomata.com/all "http://polls.simaomata.com/all"
-[latest]: http://polls.simaomata.com/latest "http://polls.simaomata.com/latest"
-
 You can also use my installation at
 [polls.simaomata.com](http://polls.simaomata.com)
 
 The following endpoints are available:
 
-* [http://polls.simaomata.com/all][http://polls.simaomata.com/all] -
+* [http://polls.simaomata.com/all](http://polls.simaomata.com/all) -
   Returns latest known information about all 2011 polls
 
-*  [http://polls.simaomata.com/latest][http://polls.simaomata.com/latest] - Returns information about the most recent poll
+*  [http://polls.simaomata.com/latest](http://polls.simaomata.com/latest) - Returns information about the most recent poll
 
 All information provided by these endpoints is updated once a day.
 

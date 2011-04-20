@@ -1,0 +1,121 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+</head>
+
+<body>
+<h1>Polls2k11 - Get the latest polls for the Portuguese legislative election, 2011</h1>
+
+<h2>What's this?</h2>
+
+<p>Polls2k11 provides the latest poll information for the Portuguese
+legislative election 2011 in a machine readable format, currently JSON
+with JSONP support.</p>
+
+<p>Wikipedia provides a pretty nice page showing opinion polls data
+relating to the 2011 Portuguese legislative elections. I had some
+ideas to use that information but I need that information structured
+in a decent format.</p>
+
+<p>I built a script to get the data from Wikipedia and convert that
+information to JSON. I made this public so everyone can use and create
+nice apps.</p>
+
+<h2>How to use</h2>
+
+<h3>Host it yourself</h3>
+
+<p>You can install this script and host it yourself, please do!</p>
+
+<p>If you don't require JSONP, all you need to do is run polls.py every
+time you need to update the data.</p>
+
+<p>If you need JSONP, you can deploy a pollserver.py and use the
+endpoints defined there.</p>
+
+<h3>Use http://polls.simaomata.com</h3>
+
+<p>You can also use my installation at
+<a href="http://polls.simaomata.com">polls.simaomata.com</a></p>
+
+<p>The following endpoints are available:</p>
+
+<ul>
+<li><p><a href="http://polls.simaomata.com/all">http://polls.simaomata.com/all</a> -
+Returns latest known information about all 2011 polls</p></li>
+<li><p><a href="http://polls.simaomata.com/latest">http://polls.simaomata.com/latest</a> - Returns information about the most recent poll</p></li>
+</ul>
+
+<p>All information provided by these endpoints is updated once a day.</p>
+
+<p>All information can be obtained from a browser using JSONP. If you
+pass a GET parameter named "jsonp=callbackName", the response will be
+the following:</p>
+
+<pre><code>callbackName(pollData);
+</code></pre>
+
+<p>Check the example below for more information on this.</p>
+
+<h2>Example</h2>
+
+<h3>Using jQuery to get JSONP data</h3>
+
+<p>An example is provided in tests/jsonp_example.html. This examples
+fetches data from /all using JSONP and jQuery and displays the result
+in a simple manner.</p>
+
+<p>If you want to use the /latest endpoint from a browser, you can use
+/latest?jsonp=mycallback. This endpoint will return the following
+response:</p>
+
+<pre><code>mycallback({
+    "date": "8-10 April",
+    "source": {
+        "href": "http://www.tvi24.iol.pt/politica/sondagem-psd-ps-eleicoes-intercampos-tvi24/1245972-4072.html",
+        "name": "INTERCAMPUS"
+    },
+    "parties": {
+        "Lead": "5.6",
+        "Others / undecided": "3.1",
+        "Socialist": "33.1",
+        "People's Party": "9.4",
+        "Green-Communist": "8.1",
+        "Social Democratic": "38.7",
+        "Left Bloc": "7.6"
+    }
+});
+</code></pre>
+
+<h2>Get Inspired</h2>
+
+<p>There are so many things everyone can do with this information, it's
+so freakin easy to use it!</p>
+
+<p>GO BUILD SOMETHING! No excuses.</p>
+
+<h2>License</h2>
+
+<p>Copyright (C) 2011 by Sim‹o Mata</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.</p>
+
+</body>
+
+</html>

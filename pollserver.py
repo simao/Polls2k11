@@ -6,9 +6,15 @@ import polls
 
 __author__ = 'Simão Mata'
 
+STATIC_FILES_DIR = "static/"
+
 ALL_POLLS_FILE = polls.ALL_POLLS_FILE
 LATEST_POLL_FILE = polls.LATEST_POLL_FILE
 DEFAULT_CONTENT_TYPE = "application/javascript; charset=UTF8"
+
+@get('/')
+def get_index():
+    return static_file("index.html", root=STATIC_FILES_DIR)
 
 @get('/all')
 def get_all():
