@@ -90,7 +90,7 @@ def get_polls_all(fd, limit=None):
                 "parties" : {}
             }
 
-        current_poll_data["parties"].update((partie, cells_t[n]) for partie, n in izip(parties_names, range(2,8)))
+        current_poll_data["parties"].update((party, cells_t[n]) for party, n in izip(parties_names, range(2,8)))
 
         all_polls.append(current_poll_data)
 
@@ -120,8 +120,8 @@ def get_polls_from_url(url, limit=None):
 
 
 def main():
-    _log.debug("Will parse last poll to %s" % ALL_POLLS_FILE)
-    _log.debug("Will dump all polls to %s" % LATEST_POLL_FILE)
+    _log.debug("Will parse last poll to %s" % LATEST_POLL_FILE)
+    _log.debug("Will dump all polls to %s" % ALL_POLLS_FILE)
 
     all_polls = get_polls_from_url(POLLS_URL)
 
