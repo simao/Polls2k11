@@ -6,10 +6,10 @@ Polls2k11 provides the latest poll information for the Portuguese
 legislative election 2011 in a machine readable format, currently JSON
 with JSONP support.
 
-Wikipedia provides a pretty nice page showing opinion polls data
-relating to the 2011 Portuguese legislative elections. I had some
-ideas to use that information but I need that information structured
-in a decent format.
+[Wikipedia](http://en.wikipedia.org/wiki/Portuguese_legislative_election,_2011)
+provides a pretty nice page showing opinion polls data relating to the
+2011 Portuguese legislative elections. I had some ideas to use that
+information but I need that information structured in a decent format.
 
 I built a script to get the data from Wikipedia and convert that
 information to JSON. I made this public so everyone can use and create
@@ -19,13 +19,15 @@ nice apps.
 
 ### Host it yourself ###
 
-You can install this script and host it yourself, please do!
+You can install this script and host it yourself.
 
 If you don't require JSONP, all you need to do is run polls.py every
 time you need to update the data.
 
 If you need JSONP, you can deploy a pollserver.py and use the
 endpoints defined there.
+
+Use can also use my installation to get the data, see below.
 
 ### Use http://polls.simaomata.com ###
 

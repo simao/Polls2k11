@@ -3,18 +3,48 @@
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
     <script type="text/javascript">
+        var polls = {};
+        polls.jq = {};
+        polls.js = {};
+
+        /**
+         * We should use mustache or jquery templates to handle something like this,
+         * but it's just an example so we'll to it this way.
+         *
+         * @param party_name
+         * @param party_percent
+         */
+        polls.js.buildRow = function (party_name, party_percent) {
+            var template = "<tr><td>{0}</td>" + "<td>{1}</td></tr>";
+            return template.replace("{0}", party_name).replace("{1}", party_percent);
+        };
+
+        polls.js.processData = function (polls_data) {
+            var latest = polls_data[0];
+
+            $.each(latest['parties'], function(party_name, party_percent) {
+                var new_row = polls.js.buildRow(party_name, party_percent);
+                $(new_row).appendTo(polls.jq.table);
+            });
+        };
 
         $(document).ready(function () {
-            $.getJSON("http://127.0.0.1:8080/all?jsonp=?",
-              function(data) {
-                  $("#content").html(JSON.stringify(data));
-              });
+            polls.jq.table = $("#polls_table tbody");
+            $.getJSON("http://127.0.0.1:8080/all?jsonp=?", polls.js.processData)
         });
 
     </script>
 </head>
 <body>
-  <pre id="content">
-</pre>
+
+
+<table id="polls_table">
+    <tbody>
+        <tr>
+            <th>Party</th><th>Percentage</th>
+        </tr>
+    </tbody>
+</table>
+
 </body>
 </html>

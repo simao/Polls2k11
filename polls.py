@@ -119,17 +119,20 @@ def get_polls_from_url(url, limit=None):
     return get_polls_all(response, limit=limit)
 
 
-def main():
-    _log.debug("Will parse last poll to %s" % LATEST_POLL_FILE)
-    _log.debug("Will dump all polls to %s" % ALL_POLLS_FILE)
+def main(poll_url, latest_ouput_file, all_output_file):
+    """
+    Writes polls to filenames latest_ouput_file and all_output_file
+    """
+    _log.debug("Will parse last poll to %s" % latest_ouput_file)
+    _log.debug("Will dump all polls to %s" % all_output_file)
 
-    all_polls = get_polls_from_url(POLLS_URL)
+    all_polls = get_polls_from_url(poll_url)
 
-    with codecs.open(ALL_POLLS_FILE, 'w', 'UTF-8') as fd:
+    with codecs.open(all_output_file, 'w', 'UTF-8') as fd:
         json.dump(all_polls, fd, indent=4, ensure_ascii=False)
 
     if len(all_polls) > 0:
-        with codecs.open(LATEST_POLL_FILE, 'w', 'UTF-8') as fd:
+        with codecs.open(latest_ouput_file, 'w', 'UTF-8') as fd:
             json.dump(all_polls[0], fd, indent=4, ensure_ascii=False)
     else:
         _log.error("Could not parse polls. Not saving latest poll")
@@ -138,6 +141,6 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    main(POLLS_URL, LATEST_POLL_FILE, ALL_POLLS_FILE)
 
 
