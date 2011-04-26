@@ -14,7 +14,7 @@ DEFAULT_CONTENT_TYPE = "application/javascript; charset=UTF8"
 
 @get('/')
 def get_index():
-    return static_file("index.html", root=STATIC_FILES_DIR)
+    return static_file("index.html", root=STATIC_FILES_DIR, mimetype="text/html; charset=UTF8")
 
 @get('/all')
 def get_all():
