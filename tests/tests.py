@@ -7,6 +7,7 @@ import simplejson as json
 import polls
 from codecs import open
 
+TEST_WIKIPEDIA_PAGE = 'tests/resources/full.html'
 LATEST_TEMP_FILE = "tests/latest_temp.json"
 __author__ = 'Simao Mata'
 
@@ -16,18 +17,18 @@ class TestPolls(unittest.TestCase):
         self.maxDiff = None
 
         self.latest_poll = {
-            "date" : u"8-10 April",
+            "date" : u"7-12 May",
             "source" : {
-                "href" : u"http://www.tvi24.iol.pt/politica/sondagem-psd-ps-eleicoes-intercampos-tvi24/1245972-4072.html",
+                "href" : u"http://www.publico.pt/Pol%C3%ADtica/ps-passa-psd-e-cds-dispara-para-os-134_1494074?all=1",
                 "name" : u"INTERCAMPUS",
             },
             "parties" : {
-                "Socialist" : u"33.1",
-                "Social Democratic" : u"38.7",
-                "People's Party" : u"9.4",
-                "Left Bloc" : u"7.6",
-                "Green-Communist" : u"8.1",
-                "Others / undecided" : u"3.1",
+                u"Socialist" : u"36.8",
+                u"Social Democratic" : u"33.9",
+                u"People's Party" : u"13.4",
+                u"Left Bloc" : u"6.0",
+                u"Green-Communist" : u"7.4",
+                u"Others / undecided" : u"2.4",
             }
         }
 
@@ -47,7 +48,7 @@ class TestPolls(unittest.TestCase):
         self.assertDictEqual(self.latest_poll, latest_poll)
 
     def test_get_newest_poll(self):
-        file_path = "tests/resources/full.html"
+        file_path = TEST_WIKIPEDIA_PAGE
 
         with open(file_path, 'r', 'utf-8') as fd:
             poll_stats = polls.get_poll_newest(fd)
@@ -57,13 +58,16 @@ class TestPolls(unittest.TestCase):
 
     def monkey_patch_urlopen(self, expected_url):
         '''
-        Substitute urllib2.urlopen by a custom function that simple checks that the url is equal to expected_url
+        Substitute urllib2.urlopen by a custom function that checks that the url is equal to expected_url
         and returns the content of the resources/full.html file
+
+        TODO: This method of testing assumes the code will use urlopen, we shouldn't care about what lib is being
+        used to get the url. We should setup a small stub http server to serve the page
         '''
         #noinspection PyUnusedLocal
         def monkey_url_open(request, *args, **kwargs):
             self.assertEquals(expected_url, request.get_full_url())
-            return open('tests/resources/full.html')
+            return open(TEST_WIKIPEDIA_PAGE)
         urllib2.urlopen = monkey_url_open
 
     def test_get_newest_from_url(self):

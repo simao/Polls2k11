@@ -1,0 +1,362 @@
+[
+    {
+        "date": "7-12 May",
+        "source": {
+            "href": "http://www.publico.pt/Pol%C3%ADtica/ps-passa-psd-e-cds-dispara-para-os-134_1494074?all=1",
+            "name": "INTERCAMPUS"
+        },
+        "parties": {
+            "Others / undecided": "2.4",
+            "Socialist": "36.8",
+            "People's Party": "13.4",
+            "Green-Communist": "7.4",
+            "Social Democratic": "33.9",
+            "Left Bloc": "6.0"
+        }
+    },
+    {
+        "date": "9-10 May",
+        "source": {
+            "href": "http://www.tsf.pt/PaginaInicial/Portugal/Interior.aspx?content_id=1849863",
+            "name": "Marktest"
+        },
+        "parties": {
+            "Others / undecided": "6.6",
+            "Socialist": "33.4",
+            "People's Party": "9.0",
+            "Green-Communist": "6.5",
+            "Social Democratic": "39.7",
+            "Left Bloc": "4.8"
+        }
+    },
+    {
+        "date": "4-8 May",
+        "source": {
+            "href": "http://www.tvi24.iol.pt/politica/sondagem-tvi-psd-intercampus-tvi-ps-eleicoes/1252065-4072.html",
+            "name": "INTERCAMPUS"
+        },
+        "parties": {
+            "Others / undecided": "3.6",
+            "Socialist": "35.1",
+            "People's Party": "10.9",
+            "Green-Communist": "7.7",
+            "Social Democratic": "36.2",
+            "Left Bloc": "6.5"
+        }
+    },
+    {
+        "date": "2-5 May",
+        "source": {
+            "href": "http://www.tvi24.iol.pt/politica/sondagem-eleicoes-legislativas-ps-psd-tvi24/1251487-4072.html",
+            "name": "INTERCAMPUS"
+        },
+        "parties": {
+            "Others / undecided": "2.8",
+            "Socialist": "34.8",
+            "People's Party": "10.5",
+            "Green-Communist": "7.9",
+            "Social Democratic": "37.0",
+            "Left Bloc": "7.0"
+        }
+    },
+    {
+        "date": "28 April-May 3",
+        "source": {
+            "href": "http://rr.sapo.pt/informacao_detalhe.aspx?fid=1238&did=154296",
+            "name": "Eurosondagem"
+        },
+        "parties": {
+            "Others / undecided": "6.3",
+            "Socialist": "32.5",
+            "People's Party": "11.1",
+            "Green-Communist": "7.7",
+            "Social Democratic": "35.8",
+            "Left Bloc": "6.6"
+        }
+    },
+    {
+        "date": "29 April-May 2",
+        "source": {
+            "href": "http://www.cmjornal.xl.pt/detalhe/noticias/nacional/politica/vantagem-minima-de-passos-coelho",
+            "name": "Aximage"
+        },
+        "parties": {
+            "Others / undecided": "12.0",
+            "Socialist": "28.3",
+            "People's Party": "11.2",
+            "Green-Communist": "9.3",
+            "Social Democratic": "31.5",
+            "Left Bloc": "7.7"
+        }
+    },
+    {
+        "date": "30 April-May 1",
+        "source": {
+            "href": "http://www.jn.pt/PaginaInicial/Nacional/Interior.aspx?content_id=1845329",
+            "name": "Universidade Católica"
+        },
+        "parties": {
+            "Others / undecided": "6.0",
+            "Socialist": "36.0",
+            "People's Party": "10.0",
+            "Green-Communist": "9.0",
+            "Social Democratic": "34.0",
+            "Left Bloc": "5.0"
+        }
+    },
+    {
+        "date": "14-19 April",
+        "source": {
+            "href": "http://aeiou.expresso.pt/sondagem-psd-perde-folego=f644886",
+            "name": "Eurosondagem"
+        },
+        "parties": {
+            "Others / undecided": "5.0",
+            "Socialist": "32.7",
+            "People's Party": "11.3",
+            "Green-Communist": "7.8",
+            "Social Democratic": "36.3",
+            "Left Bloc": "6.9"
+        }
+    },
+    {
+        "date": "15-17 April",
+        "source": {
+            "href": "http://ww2.publico.pt/Pol%C3%ADtica/sondagem-coloca-ps-e-psd-em-empate-tecnico-em-vesperas-de-legislativas_1490778",
+            "name": "Marktest"
+        },
+        "parties": {
+            "Others / undecided": "7.0",
+            "Socialist": "36.1",
+            "People's Party": "7.5",
+            "Green-Communist": "8.1",
+            "Social Democratic": "35.3",
+            "Left Bloc": "6.0"
+        }
+    },
+    {
+        "date": "8-10 April",
+        "source": {
+            "href": "http://www.tvi24.iol.pt/politica/sondagem-psd-ps-eleicoes-intercampos-tvi24/1245972-4072.html",
+            "name": "INTERCAMPUS"
+        },
+        "parties": {
+            "Others / undecided": "3.1",
+            "Socialist": "33.1",
+            "People's Party": "9.4",
+            "Green-Communist": "8.1",
+            "Social Democratic": "38.7",
+            "Left Bloc": "7.6"
+        }
+    },
+    {
+        "date": "2-3 April",
+        "source": {
+            "href": "http://www.jn.pt/PaginaInicial/Nacional/Interior.aspx?content_id=1824101",
+            "name": "Universidade Católica"
+        },
+        "parties": {
+            "Others / undecided": "7.0",
+            "Socialist": "33.0",
+            "People's Party": "7.0",
+            "Green-Communist": "8.0",
+            "Social Democratic": "39.0",
+            "Left Bloc": "6.0"
+        }
+    },
+    {
+        "date": "28-30 March",
+        "source": {
+            "href": "http://www.cmjornal.xl.pt/detalhe/noticias/nacional/actualidade/psd-desce-ps-sobe",
+            "name": "Aximage"
+        },
+        "parties": {
+            "Others / undecided": "11.0",
+            "Socialist": "28.4",
+            "People's Party": "10.8",
+            "Green-Communist": "8.5",
+            "Social Democratic": "34.8",
+            "Left Bloc": "6.5"
+        }
+    },
+    {
+        "date": "27-30 March",
+        "source": {
+            "href": "http://sic.sapo.pt/online/noticias/pais/PSD+a+frente+nas+intencoes+de+voto+mas+sem+maioria+absoluta.htm",
+            "name": "Eurosondagem"
+        },
+        "parties": {
+            "Others / undecided": "5.5",
+            "Socialist": "30.4",
+            "People's Party": "10.7",
+            "Green-Communist": "8.4",
+            "Social Democratic": "37.3",
+            "Left Bloc": "7.7"
+        }
+    },
+    {
+        "date": "24-26 March",
+        "source": {
+            "href": "http://www.tvi24.iol.pt/politica/sondagem-legislativas-passos-coelho-tvi24-socrates/1242530-4072.html",
+            "name": "INTERCAMPUS"
+        },
+        "parties": {
+            "Others / undecided": "1.3",
+            "Socialist": "32.8",
+            "People's Party": "8.7",
+            "Green-Communist": "7.1",
+            "Social Democratic": "42.2",
+            "Left Bloc": "7.9"
+        }
+    },
+    {
+        "date": "18-23 March",
+        "source": {
+            "href": "http://www.tsf.pt/PaginaInicial/Portugal/Interior.aspx?content_id=1814765",
+            "name": "Marktest"
+        },
+        "parties": {
+            "Others / undecided": "6.9",
+            "Socialist": "24.5",
+            "People's Party": "6.3",
+            "Green-Communist": "6.7",
+            "Social Democratic": "46.7",
+            "Left Bloc": "8.9"
+        }
+    },
+    {
+        "date": "3-7 March",
+        "source": {
+            "href": "http://www.erc.pt/download/YTozOntzOjU6ImFjY2FvIjtzOjg6ImRvd25sb2FkIjtzOjg6ImZpY2hlaXJvIjtzOjQxOiJtZWRpYS9zb25kYWdlbnMvb2JqZWN0b19vZmZsaW5lLzE1My4yLnBkZiI7czo2OiJ0aXR1bG8iO3M6MzI6IjNiYWU4MDQ2M2U4ZWY4MDdmNDFkN2I0YmE2ZjI0NmYwIjt9/resultados",
+            "name": "Aximage"
+        },
+        "parties": {
+            "Others / undecided": "8.1",
+            "Socialist": "27.9",
+            "People's Party": "8.9",
+            "Green-Communist": "10.7",
+            "Social Democratic": "37.9",
+            "Left Bloc": "6.5"
+        }
+    },
+    {
+        "date": "23-28 February",
+        "source": {
+            "href": "http://www.erc.pt/download/YTozOntzOjU6ImFjY2FvIjtzOjg6ImRvd25sb2FkIjtzOjg6ImZpY2hlaXJvIjtzOjQxOiJtZWRpYS9zb25kYWdlbnMvb2JqZWN0b19vZmZsaW5lLzE1Mi4yLnBkZiI7czo2OiJ0aXR1bG8iO3M6MzI6IjNiYWU4MDQ2M2U4ZWY4MDdmNDFkN2I0YmE2ZjI0NmYwIjt9/resultados",
+            "name": "Eurosondagem"
+        },
+        "parties": {
+            "Others / undecided": "6.3",
+            "Socialist": "30.6",
+            "People's Party": "9.9",
+            "Green-Communist": "8.6",
+            "Social Democratic": "36.9",
+            "Left Bloc": "7.7"
+        }
+    },
+    {
+        "date": "17-23 February",
+        "source": {
+            "href": "http://www.erc.pt/download/YTozOntzOjU6ImFjY2FvIjtzOjg6ImRvd25sb2FkIjtzOjg6ImZpY2hlaXJvIjtzOjQxOiJtZWRpYS9zb25kYWdlbnMvb2JqZWN0b19vZmZsaW5lLzE1MS40LnBkZiI7czo2OiJ0aXR1bG8iO3M6MzI6ImQ5ZDliMjBjZDAwOWRkMzg2MDIyMWE0NzIwZmE0ODg3Ijt9/projeccao-de-voto",
+            "name": "Marktest"
+        },
+        "parties": {
+            "Others / undecided": "6.9",
+            "Socialist": "29.1",
+            "People's Party": "4.2",
+            "Green-Communist": "6.1",
+            "Social Democratic": "47.8",
+            "Left Bloc": "5.9"
+        }
+    },
+    {
+        "date": "3-8 February",
+        "source": {
+            "href": "http://www.erc.pt/download/YTozOntzOjU6ImFjY2FvIjtzOjg6ImRvd25sb2FkIjtzOjg6ImZpY2hlaXJvIjtzOjQxOiJtZWRpYS9zb25kYWdlbnMvb2JqZWN0b19vZmZsaW5lLzE0OS4yLnBkZiI7czo2OiJ0aXR1bG8iO3M6MzI6ImMxMTdiYzA4ODBjNDliN2JiODE4N2I2ZDE1NjhiNjUwIjt9/relatorio",
+            "name": "Eurosondagem"
+        },
+        "parties": {
+            "Others / undecided": "5.5",
+            "Socialist": "29.3",
+            "People's Party": "10.2",
+            "Green-Communist": "9.2",
+            "Social Democratic": "36.3",
+            "Left Bloc": "9.5"
+        }
+    },
+    {
+        "date": "1-3 February",
+        "source": {
+            "href": "http://www.erc.pt/download/YTozOntzOjU6ImFjY2FvIjtzOjg6ImRvd25sb2FkIjtzOjg6ImZpY2hlaXJvIjtzOjQxOiJtZWRpYS9zb25kYWdlbnMvb2JqZWN0b19vZmZsaW5lLzE0OC4yLnBkZiI7czo2OiJ0aXR1bG8iO3M6MzI6IjNiYWU4MDQ2M2U4ZWY4MDdmNDFkN2I0YmE2ZjI0NmYwIjt9/resultados",
+            "name": "Aximage"
+        },
+        "parties": {
+            "Others / undecided": "9.1",
+            "Socialist": "27.8",
+            "People's Party": "9.5",
+            "Green-Communist": "9.3",
+            "Social Democratic": "37.8",
+            "Left Bloc": "6.5"
+        }
+    },
+    {
+        "date": "19-21 January",
+        "source": {
+            "href": "http://www.erc.pt/download/YTozOntzOjU6ImFjY2FvIjtzOjg6ImRvd25sb2FkIjtzOjg6ImZpY2hlaXJvIjtzOjQxOiJtZWRpYS9zb25kYWdlbnMvb2JqZWN0b19vZmZsaW5lLzE0NS4yLnBkZiI7czo2OiJ0aXR1bG8iO3M6MzI6ImMxMTdiYzA4ODBjNDliN2JiODE4N2I2ZDE1NjhiNjUwIjt9/relatorio",
+            "name": "Eurosondagem"
+        },
+        "parties": {
+            "Others / undecided": "5.0",
+            "Socialist": "30.3",
+            "People's Party": "9.6",
+            "Green-Communist": "8.4",
+            "Social Democratic": "37.4",
+            "Left Bloc": "9.3"
+        }
+    },
+    {
+        "date": "16-19 January",
+        "source": {
+            "href": "http://www.erc.pt/download/YTozOntzOjU6ImFjY2FvIjtzOjg6ImRvd25sb2FkIjtzOjg6ImZpY2hlaXJvIjtzOjQxOiJtZWRpYS9zb25kYWdlbnMvb2JqZWN0b19vZmZsaW5lLzE0MS40LnBkZiI7czo2OiJ0aXR1bG8iO3M6MzI6IjNiYWU4MDQ2M2U4ZWY4MDdmNDFkN2I0YmE2ZjI0NmYwIjt9/resultados",
+            "name": "INTERCAMPUS"
+        },
+        "parties": {
+            "Others / undecided": "12.2",
+            "Socialist": "30.8",
+            "People's Party": "5.8",
+            "Green-Communist": "7.1",
+            "Social Democratic": "36.8",
+            "Left Bloc": "7.3"
+        }
+    },
+    {
+        "date": "5-11 January",
+        "source": {
+            "href": "http://www.erc.pt/download/YTozOntzOjU6ImFjY2FvIjtzOjg6ImRvd25sb2FkIjtzOjg6ImZpY2hlaXJvIjtzOjQxOiJtZWRpYS9zb25kYWdlbnMvb2JqZWN0b19vZmZsaW5lLzE0Ny4yLnBkZiI7czo2OiJ0aXR1bG8iO3M6MzI6ImMxMTdiYzA4ODBjNDliN2JiODE4N2I2ZDE1NjhiNjUwIjt9/relatorio",
+            "name": "Eurosondagem"
+        },
+        "parties": {
+            "Others / undecided": "5.2",
+            "Socialist": "29.6",
+            "People's Party": "10.1",
+            "Green-Communist": "8.8",
+            "Social Democratic": "37.3",
+            "Left Bloc": "9.0"
+        }
+    },
+    {
+        "date": "3-6 January",
+        "source": {
+            "href": "http://www.erc.pt/download/YTozOntzOjU6ImFjY2FvIjtzOjg6ImRvd25sb2FkIjtzOjg6ImZpY2hlaXJvIjtzOjQwOiJtZWRpYS9zb25kYWdlbnMvb2JqZWN0b19vZmZsaW5lLzI5LjIucGRmIjtzOjY6InRpdHVsbyI7czozMjoiM2JhZTgwNDYzZThlZjgwN2Y0MWQ3YjRiYTZmMjQ2ZjAiO30=/resultados",
+            "name": "Aximage"
+        },
+        "parties": {
+            "Others / undecided": "10.1",
+            "Socialist": "25.4",
+            "People's Party": "8.8",
+            "Green-Communist": "9.9",
+            "Social Democratic": "38.3",
+            "Left Bloc": "7.5"
+        }
+    }
+]

@@ -59,8 +59,8 @@ def get_polls_all(fd, limit=None):
     # Find out parties names
     # All names are on the first line of the table
     # Search for font tags
-    font_tags = all_trs[0].findAllNext("font")
-    parties_names = [f.string for f in font_tags]
+    span_tags = all_trs[0].findAllNext("span")
+    parties_names = [f.string for f in span_tags]
 
     all_polls = []
     # TODO Further asserts/verifies are needed to make sure we can use this table
