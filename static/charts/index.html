@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.load("visualization", "1", {packages:["corechart"]});
+
+        var polls = {};
+        polls.jq = {};
+        polls.js = {};
+
+        polls.parties = {
+            "Socialist" : {
+                name : "PS",
+                color: "#F6358A"
+            },
+            "Social Democratic" : {
+                name: "PSD",
+                color: "#E56717"
+            },
+            "People's Party" : {
+                name : "PP",
+                color: "#15317E"
+            },
+            "Left Bloc" : {
+                name : "BE",
+                color: "#C11B17"
+            },
+            "Green-Communist" : {
+                name : "CDU",
+                color: "#254117"
+            },
+            "Others / undecided" : {
+                name : "Outros",
+                color: "#736F6E"
+            }
+        };
+
+        polls.js.getColor = function (party_name) {
+            for (en_name in polls.parties) {
+                if (party_name == polls.parties[en_name].name) {
+                    return polls.parties[en_name].color;
+                }
+            }
+            return undefined;
+        };
+        
+
+        polls.js.processLineData = function (polls_data) {
+            var lineData = new google.visualization.DataTable();
+
+            lineData.addColumn('string', 'Data');
+            $.each(polls.parties, function (en_name, party) {
+                polls.parties[en_name].lineColumnIdx = lineData.addColumn('number', party.name);
+            });
+
+            var size = polls_data.length - 1;
+            for (var i = size; i >= 0; i--) {
+                var poll = polls_data[i];
+
+                var row_idx = lineData.addRow();
+                lineData.setCell(row_idx, 0, poll.date);
+
+                $.each(poll['parties'], function(party_name, party_percent) {
+                    var column_idx = polls.parties[party_name].lineColumnIdx;
+                    lineData.setCell(row_idx, column_idx, parseFloat(party_percent))
+                });
+            }
+
+            var lineColors = [];
+            for(i = 1; i < lineData.getNumberOfColumns(); i++) {
+                var col_label = lineData.getColumnLabel(i);
+                var c = polls.js.getColor(col_label);
+                lineColors.push(c);
+            }
+
+            var chart = new google.visualization.LineChart(polls.jq.lineChart.get(0));
+            chart.draw(lineData, {width: 700, height: 600, title: 'Timeline', colors: lineColors});
+        };
+
+        polls.js.processPieData = function (polls_data) {
+            var pieData = new google.visualization.DataTable();
+            
+            pieData.addColumn('string', 'Partido');
+            pieData.addColumn('number', 'Percentagem');
+
+            $.each(polls_data['parties'], function(party_name, party_percent) {
+                pieData.addRow([polls.parties[party_name].name,parseFloat(party_percent)]);
+            });
+
+            var sort_key = [{ column: 1, desc: true }];
+            pieData.sort(sort_key);
+
+            var pieColors = [];
+            $.each(pieData.getSortedRows(sort_key), function(row_idx) {
+                pieColors.push(polls.js.getColor(pieData.getValue(row_idx, 0)));
+            });
+
+            var chart = new google.visualization.PieChart(polls.jq.pieChart.get(0));
+            chart.draw(pieData, {width: 700, height: 600, title: polls_data['date'], colors: pieColors});
+        };
+        
+        $(document).ready(function () {
+            polls.jq.pieChart = $("#pie_chart_div");
+            polls.jq.lineChart = $("#line_chart_div");
+
+            var POLLS_API_URL = "http://polls.simaomata.com/all?jsonp=?";
+
+            $.getJSON(POLLS_API_URL,
+                    function (data) {
+                        polls.js.processPieData(data[0]);
+                        polls.js.processLineData(data);
+                    });
+        });
+        
+    </script>
+
+    <link rel="stylesheet" href="blueprint/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="blueprint/print.css" type="text/css" media="print">
+    <!--[if lt IE 8]>
+      <link rel="stylesheet" href="blueprint/ie.css" type="text/css" media="screen, projection">
+    <![endif]-->
+
+
+    <style type="text/css">
+    .footer {
+        text-align: center;
+    }
+    </style>
+
+    <title>Sondagens Legislativas 2011</title>
+</head>
+<body>
+<div class="container">
+    <div class="span-12 last">
+        <h1>Quem Ganha?</h1>
+    </div>
+
+    <div class="prepend-3 span-12 last">
+        <h2>Última Sondagem</h2>
+
+        <div id="pie_chart_div"></div>
+    </div>
+
+    <div class="prepend-3 span-12 last">
+        <h2>Evolução</h2>
+        <div id="line_chart_div"></div>
+    </div>
+
+    <div class="span-24 footer">
+        <p>Built by <a href="http://twitter.com/simaom">@simaom</a> and <a href="http://twitter.com/bmareal">@bmareal</a></p>
+        <p>Get the <a href="http://github.com/simaom">source</a></p>
+        <p>Dados obtidos <a href="http://en.wikipedia.org/wiki/Portuguese_legislative_election,_2011">aqui</a></p>
+    </div>
+</div>
+</body>
+</html>
