@@ -15,6 +15,13 @@ I built a script to get the data from Wikipedia and convert that
 information to JSON. I made this public so everyone can use and create
 nice apps.
 
+## Available clients ##
+
+[Bruno Areal](http://twitter.com/bmareal) built a JS client for this
+API. A running version of this client is available at
+[http://polls.simaomata.com/charts](http://polls.simaomata.com/charts)
+
+
 ## How to use ##
 
 ### Host it yourself ###

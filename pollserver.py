@@ -26,12 +26,6 @@ def get_all():
     jsonp_func = request.GET.get('jsonp', None)
     return _get_poll_file(LATEST_POLL_FILE, jsonp_func)
 
-@get('/charts')
-def get_all():
-    return static_file("charts.html", root=STATIC_FILES_DIR, mimetype="text/html; charset=UTF8")
-
-##
-
 def _get_poll_file(path, jsonp_func=None):
     http_response = static_file(path, root='./', mimetype=DEFAULT_CONTENT_TYPE)
     if http_response.status != 200:
